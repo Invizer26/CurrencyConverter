@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="script.js" async></script>
+  <script src="//www.cbr-xml-daily.ru/daily_json.js" async></script>
+</head>
+<body>
+<div class="container">
+  <div class="navMenu">
+    <a href="index.html" class="navMenu__element">Список валют</a>
+    <a href="#" class="navMenu__element">Конвертер</a>
+  </div>
+
+  <div class="convertor">
+    <div class="convertor__base">
+      <div class="currencyName">{{currencies[baseCurrency.name].Name}}</div>
+      <div class="row-container">
+        <select v-model="baseCurrency.name" class="choiceCurrency">
+          <option v-for="currency in currencies">{{currency.CharCode}}</option>
+        </select>
+        <input v-model="baseCurrency.value" v-on:input="convert" type="" class="inputCurrency">
+      </div>
+
+    </div>
+    <div v-on:click="reverse" class="convertor__reverse">&#10231;</div>
+    <div class="convertor__result">
+      <div class="currencyName">{{currencies[resultCurrency.name].Name}}</div>
+      <div class="row-container">
+        <select v-model="resultCurrency.name" class="choiceCurrency">
+          <option v-for="currency in currencies">{{currency.CharCode}}</option>
+        </select>
+        <div class="resultCurrency">
+          {{resultCurrency.value}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js" async></script>
+    <script src="//www.cbr-xml-daily.ru/daily_json.js" async></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navMenu">
+            <a href="#" class="navMenu__element">Список валют</a>
+            <a href="convertor.html" class="navMenu__element">Конвертер</a>
+        </div>
+
+        <label for="mainCurrency" class="mainCurrencyLabel">Выбор оснавной валюты</label>
+        <select v-model="mainValute" class="mainCurrency" id="mainCurrency">
+            <option v-for="currency in currencies">{{currency.CharCode}}</option>
+        </select>
+
+        <input v-model="search" placeholder="Поиск" class="searchCurrency">
+
+        <ul class="currencyList" >
+           <currency-list v-for="currency in currencies" :currencies="currencies" :currency="currency" :main-valute="mainValute" :search="search" ></currency-list>
+        </ul>
+
+
+
+    </div>
+</body>
+</html>

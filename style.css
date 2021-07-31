@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.container{
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    background: cornflowerblue;
+}
+
+.row-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.navMenu{
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.navMenu__element{
+    width: auto;
+    padding: 5px;
+    background: white;
+    font-size: 20px;
+    border-radius: 0 0 10px 0;
+    color: black;
+    text-decoration: none;
+}
+
+.navMenu__element + .navMenu__element{
+    border-radius: 0 0 10px 10px;
+}
+
+.searchCurrency, .mainCurrency{
+    display: block;
+    width: 600px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+.mainCurrencyLabel{
+    font-size: 20px;
+    color: white;
+    display: block;
+    width: 600px;
+    margin: 10px auto 0 auto;
+}
+
+.currencyList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+
+}
+
+.currencyList__element{
+    width: 600px;
+    height: 120px;
+    margin: 20px 0;
+    background: white;
+    border-radius: 10px;
+}
+
+.currencyName{
+    margin: 10px;
+    color: gray;
+    font-size: 20px;
+}
+
+.currencyCode, .currencyRate, .currencyChange{
+    margin: 10px;
+    font-size: 30px;
+}
+
+.currencyRate{
+    margin: 10px auto;
+}
+
+.up{
+    color: lightgreen;
+}
+
+.down{
+    color: red;
+}
+
+.convertor{
+    width: 600px;
+    height: 120px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.convertor__base, .convertor__result{
+    width: 45%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+}
+
+.convertor__reverse{
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    font-size: 30px;
+    background: white;
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+.choiceCurrency{
+    font-size: 20px;
+    margin: 10px;
+}
+
+.inputCurrency, .resultCurrency{
+    font-size: 20px;
+    border: solid black;
+    border-width: 0 0 2px;
+    width: 170px;
+    line-height: 40px;
+}
+
